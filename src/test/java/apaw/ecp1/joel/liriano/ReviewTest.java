@@ -12,7 +12,7 @@ public class ReviewTest {
 
     @BeforeEach
     void resetReviewData(){
-        review = new Review("Title","Author","message",7);
+        review = new Review("message");
     }
 
     @Test
