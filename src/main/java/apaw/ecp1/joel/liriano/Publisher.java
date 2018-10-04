@@ -38,7 +38,6 @@ public class Publisher {
     }
 
     public void setWebsite(String website){
-        assert website!= null;
         if(website==null){
             throw new IllegalArgumentException("Invalid website: " + website);
         }
@@ -46,7 +45,6 @@ public class Publisher {
     }
 
     public void setName(String name) {
-        assert name != null;
         if(name==null){
             throw new IllegalArgumentException("Invalid name: " + name);
         }

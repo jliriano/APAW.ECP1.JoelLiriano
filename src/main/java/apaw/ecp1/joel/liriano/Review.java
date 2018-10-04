@@ -14,10 +14,6 @@ public class Review {
     private boolean pendingApproval;
 
     public Review(String title, String author, String reviewMessage, int reviewRating){
-        assert title != null;
-        assert author != null;
-        assert reviewMessage != null;
-        assert reviewRating > 0 && reviewRating<=10;
         if(title==null || author==null || reviewMessage==null || reviewRating<0 || reviewRating>10){
             throw new IllegalArgumentException("One or more invalid parameters: title: "+title+" author: "
             +author+" reviewMessage: "+reviewMessage+" reviewRating: "+reviewRating);
@@ -32,7 +28,6 @@ public class Review {
     }
 
     public void setTitle(String title) {
-        assert title != null;
         if(title==null){
             throw new IllegalArgumentException("Invalid title: " + title);
         }
@@ -41,7 +36,6 @@ public class Review {
     }
 
     public void setReviewMessage(String reviewMessage) {
-        assert reviewMessage != null;
         if(reviewMessage==null){
             throw new IllegalArgumentException("Invalid reviewMessage: " + reviewMessage);
         }
@@ -50,7 +44,6 @@ public class Review {
     }
 
     public void setReviewRating(int reviewRating) {
-        assert reviewRating > 0 && reviewRating<=10;
         if(reviewRating<0||reviewRating>10){
             throw new IllegalArgumentException("Invalid reviewRating: " + reviewRating);
         }

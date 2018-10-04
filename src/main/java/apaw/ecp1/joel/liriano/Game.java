@@ -20,7 +20,6 @@ public class Game {
     }
 
     public void setName(String name) {
-        assert name != null;
         if(name==null){
             throw new IllegalArgumentException("Invalid name: " + name);
         }
@@ -28,7 +27,6 @@ public class Game {
     }
 
     public void setGameRating(String gameRating) {
-        assert gameRating != null;
         if(gameRating==null){
             throw new IllegalArgumentException("Invalid gameRating: " + gameRating);
         }

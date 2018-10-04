@@ -12,8 +12,6 @@ public class ContactUs {
     private LocalDateTime timestamp;
 
     public ContactUs(String userEmail, String message, String subject){
-        assert userEmail != null;
-        assert message != null;
         if(userEmail==null){
             throw new IllegalArgumentException("Invalid userEmail: " + userEmail);
         }
