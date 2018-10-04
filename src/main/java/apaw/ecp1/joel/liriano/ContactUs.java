@@ -1,4 +1,4 @@
-package APAW.ECP1.JoelLiriano;
+package apaw.ecp1.joel.liriano;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -14,6 +14,12 @@ public class ContactUs {
     public ContactUs(String userEmail, String message, String subject){
         assert userEmail != null;
         assert message != null;
+        if(userEmail==null){
+            throw new IllegalArgumentException("Invalid userEmail: " + userEmail);
+        }
+        if(message==null){
+            throw new IllegalArgumentException("Invalid message: " + message);
+        }
         id = UUID.randomUUID().toString();
         this.userEmail = userEmail;
         this.message = message;

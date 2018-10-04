@@ -1,4 +1,4 @@
-package APAW.ECP1.JoelLiriano;
+package apaw.ecp1.joel.liriano;
 
 import java.time.LocalDateTime;
 
@@ -21,11 +21,17 @@ public class Game {
 
     public void setName(String name) {
         assert name != null;
+        if(name==null){
+            throw new IllegalArgumentException("Invalid name: " + name);
+        }
         this.name = name;
     }
 
     public void setGameRating(String gameRating) {
         assert gameRating != null;
+        if(gameRating==null){
+            throw new IllegalArgumentException("Invalid gameRating: " + gameRating);
+        }
         this.gameRating = gameRating;
     }
 

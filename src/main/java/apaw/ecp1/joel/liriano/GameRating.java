@@ -1,4 +1,4 @@
-package APAW.ECP1.JoelLiriano;
+package apaw.ecp1.joel.liriano;
 
 public enum GameRating {
     PENDING("RATING PENDING"),

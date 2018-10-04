@@ -1,4 +1,4 @@
-package APAW.ECP1.JoelLiriano;
+package apaw.ecp1.joel.liriano;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,11 +39,17 @@ public class Publisher {
 
     public void setWebsite(String website){
         assert website!= null;
+        if(website==null){
+            throw new IllegalArgumentException("Invalid website: " + website);
+        }
         this.website = website;
     }
 
     public void setName(String name) {
         assert name != null;
+        if(name==null){
+            throw new IllegalArgumentException("Invalid name: " + name);
+        }
         this.name = name;
     }
 

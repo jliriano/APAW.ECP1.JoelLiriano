@@ -1,4 +1,4 @@
-package APAW.ECP1.JoelLiriano;
+package apaw.ecp1.joel.liriano;
 
 import org.apache.logging.log4j.LogManager;
 import org.junit.jupiter.api.Test;

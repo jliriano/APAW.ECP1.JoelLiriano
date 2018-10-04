@@ -1,4 +1,4 @@
-package APAW.ECP1.JoelLiriano;
+package apaw.ecp1.joel.liriano;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -17,7 +17,11 @@ public class Review {
         assert title != null;
         assert author != null;
         assert reviewMessage != null;
-        assert reviewRating > 0;
+        assert reviewRating > 0 && reviewRating<=10;
+        if(title==null || author==null || reviewMessage==null || reviewRating<0 || reviewRating>10){
+            throw new IllegalArgumentException("One or more invalid parameters: title: "+title+" author: "
+            +author+" reviewMessage: "+reviewMessage+" reviewRating: "+reviewRating);
+        }
         this.id = UUID.randomUUID().toString();
         this.title = title;
         this.author = author;
@@ -29,18 +33,27 @@ public class Review {
 
     public void setTitle(String title) {
         assert title != null;
+        if(title==null){
+            throw new IllegalArgumentException("Invalid title: " + title);
+        }
         this.title = title;
         pendingApproval = true;
     }
 
     public void setReviewMessage(String reviewMessage) {
         assert reviewMessage != null;
+        if(reviewMessage==null){
+            throw new IllegalArgumentException("Invalid reviewMessage: " + reviewMessage);
+        }
         this.reviewMessage = reviewMessage;
         pendingApproval = true;
     }
 
     public void setReviewRating(int reviewRating) {
-        assert reviewRating > 0;
+        assert reviewRating > 0 && reviewRating<=10;
+        if(reviewRating<0||reviewRating>10){
+            throw new IllegalArgumentException("Invalid reviewRating: " + reviewRating);
+        }
         this.reviewRating = reviewRating;
     }
 
