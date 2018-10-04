@@ -8,13 +8,14 @@ branches:
 notifications:
   email:
     recipients:
-    - architect@gmail.com
+    - jd.liriano@alumnos.upm.es
 services:
 - mysql
 before_install:
 - mysql -e 'CREATE DATABASE IF NOT EXISTS bd;'
+install: true
 script:
-#Test unitario y de integracion en develop
+- mvn install
 - mvn verify
 - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
 - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=jliriano-github -Dsonar.login=$SONAR -Dsonar.projectKey=jliriano_APAW.ECP1.JoelLiriano
