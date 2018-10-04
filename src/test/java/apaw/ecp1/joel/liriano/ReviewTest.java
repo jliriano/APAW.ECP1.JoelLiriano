@@ -22,49 +22,11 @@ public class ReviewTest {
     }
 
     @Test
-    void testGetTitle(){
-        LogManager.getLogger().info("title: "+review.getTitle());
-        assertEquals("Title", review.getTitle());
-    }
-
-    @Test
-    void testGetAuthor(){
-        LogManager.getLogger().info("author: "+review.getAuthor());
-        assertEquals("Author", review.getAuthor());
-    }
-
-    @Test
-    void testGetMessage(){
-        LogManager.getLogger().info("reviewMessage: "+review.getReviewMessage());
-        assertEquals("message", review.getReviewMessage());
-    }
-
-    @Test
-    void testGetReviewRating(){
-        LogManager.getLogger().info("reviewRating: "+review.getReviewRating());
-        assertEquals(7, review.getReviewRating());
-    }
-
-    @Test
-    void testGetPublishedDate(){
-        LogManager.getLogger().info("publishedDate: "+review.getPublishedDate());
-        assertNotNull(review.getPublishedDate());
-    }
-
-    @Test
-    void testIsPendingApproval(){
-        LogManager.getLogger().info("pendingApproval: "+review.isPendingApproval());
-        assertTrue(review.isPendingApproval());
-    }
-
-    @Test
     void testSetTitle(){
-        LogManager.getLogger().info("Title: "+review.getTitle());
-        assertEquals("Title", review.getTitle());
-    }
+        LogManager.getLogger().info("Current title: "+review.getTitle());
+        review.setTitle("Newtitle");
+        LogManager.getLogger().info("New title: "+review.getTitle());
+        assertEquals("Newtitle",review.getTitle());
 
-    //setTitle
-    //setReviewMessage
-    //setReviewRating
-    //setPendingApproval
+    }
 }
