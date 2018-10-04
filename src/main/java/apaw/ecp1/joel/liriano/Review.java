@@ -14,16 +14,15 @@ public class Review {
     private LocalDateTime publishedDate;
     private boolean pendingApproval;
 
-    public Review(String title, String author, String reviewMessage, int reviewRating){
-        if(title==null || author==null || reviewMessage==null || reviewRating<0 || reviewRating>10){
-            throw new IllegalArgumentException("One or more invalid parameters: title: "+title+" author: "
-            +author+" reviewMessage: "+reviewMessage+" reviewRating: "+reviewRating);
+    public Review(String reviewMessage){
+        if(reviewMessage==null){
+            throw new IllegalArgumentException("Invalid reviewMessage: "+reviewMessage);
         }
         this.id = RandomId.string();
-        this.title = title;
-        this.author = author;
+        this.title = "Untitled";
+        this.author = "Anonymous";
         this.reviewMessage = reviewMessage;
-        this.reviewRating = reviewRating;
+        this.reviewRating = 0;
         this.publishedDate = LocalDateTime.now();
         this.pendingApproval = true;
     }
@@ -33,7 +32,13 @@ public class Review {
             throw new IllegalArgumentException("Invalid title: " + title);
         }
         this.title = title;
-        pendingApproval = true;
+    }
+
+    public void setAuthor(String author) {
+        if(author==null){
+            throw new IllegalArgumentException("Invalid author: " + author);
+        }
+        this.author = author;
     }
 
     public void setReviewMessage(String reviewMessage) {
@@ -41,7 +46,6 @@ public class Review {
             throw new IllegalArgumentException("Invalid reviewMessage: " + reviewMessage);
         }
         this.reviewMessage = reviewMessage;
-        pendingApproval = true;
     }
 
     public void setReviewRating(int reviewRating) {
