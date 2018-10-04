@@ -1,7 +1,8 @@
 package apaw.ecp1.joel.liriano;
 
+import apaw.ecp1.joel.liriano.utils.RandomId;
+
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class Game {
 
@@ -12,7 +13,7 @@ public class Game {
     private String gameRating;
 
     public Game(String name, Publisher publisher){
-        this.id = UUID.randomUUID().toString();
+        this.id = RandomId.string();
         this.name = name;
         this.publisher = publisher;
     }

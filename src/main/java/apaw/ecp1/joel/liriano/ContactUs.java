@@ -1,7 +1,8 @@
 package apaw.ecp1.joel.liriano;
 
+import apaw.ecp1.joel.liriano.utils.RandomId;
+
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class ContactUs {
 
@@ -18,7 +19,7 @@ public class ContactUs {
         if(message==null){
             throw new IllegalArgumentException("Invalid message: " + message);
         }
-        id = UUID.randomUUID().toString();
+        id = RandomId.string();
         this.userEmail = userEmail;
         this.message = message;
         this.subject = subject;

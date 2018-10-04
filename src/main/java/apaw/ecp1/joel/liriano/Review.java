@@ -1,7 +1,8 @@
 package apaw.ecp1.joel.liriano;
 
+import apaw.ecp1.joel.liriano.utils.RandomId;
+
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class Review {
 
@@ -18,7 +19,7 @@ public class Review {
             throw new IllegalArgumentException("One or more invalid parameters: title: "+title+" author: "
             +author+" reviewMessage: "+reviewMessage+" reviewRating: "+reviewRating);
         }
-        this.id = UUID.randomUUID().toString();
+        this.id = RandomId.string();
         this.title = title;
         this.author = author;
         this.reviewMessage = reviewMessage;

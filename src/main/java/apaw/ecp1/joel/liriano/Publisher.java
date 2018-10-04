@@ -1,8 +1,9 @@
 package apaw.ecp1.joel.liriano;
 
+import apaw.ecp1.joel.liriano.utils.RandomId;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class Publisher {
 
@@ -13,7 +14,7 @@ public class Publisher {
     private List<Review> reviews;
 
     public Publisher(String name){
-        this.id = UUID.randomUUID().toString();
+        this.id = RandomId.string();
         this.name = name;
     }
 
