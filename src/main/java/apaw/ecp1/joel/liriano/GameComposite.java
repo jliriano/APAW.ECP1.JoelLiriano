@@ -19,13 +19,17 @@ public class GameComposite extends GameComponent {
 
     @Override
     public void add(GameComponent gameComponent) {
-        assert gameComponent != null;
+        if (gameComponent==null) {
+            throw new IllegalArgumentException("Invalid gameComponent: " + gameComponent);
+        }
         gameComponentList.add(gameComponent);
     }
 
     @Override
     public void remove(GameComponent gameComponent) {
-        assert gameComponent != null;
+        if (gameComponent==null) {
+            throw new IllegalArgumentException("Invalid gameComponent: " + gameComponent);
+        }
         gameComponentList.remove(gameComponent);
     }
 }
