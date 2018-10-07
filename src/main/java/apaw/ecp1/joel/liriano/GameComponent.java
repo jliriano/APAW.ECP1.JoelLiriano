@@ -10,7 +10,11 @@ public abstract class GameComponent {
 
     public abstract boolean isComposite();
 
-    public abstract String view();
+    public abstract void add(GameComponent gameComponent);
 
-    public abstract String name();
+    public abstract void remove(GameComponent gameComponent);
+
+    public String view() {
+        return this.name;
+    }
 }
