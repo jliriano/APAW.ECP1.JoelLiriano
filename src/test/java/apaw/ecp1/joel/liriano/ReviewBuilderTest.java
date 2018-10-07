@@ -1,7 +1,6 @@
 package apaw.ecp1.joel.liriano;
 
 import org.apache.logging.log4j.LogManager;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
