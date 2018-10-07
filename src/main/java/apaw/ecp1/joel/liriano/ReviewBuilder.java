@@ -4,9 +4,8 @@ public class ReviewBuilder {
 
     private Review review;
 
-    public ReviewBuilder ReviewBuilder(String reviewMessge) {
-        this.review = new Review (reviewMessge);
-        return this;
+    public ReviewBuilder (String reviewMessage) {
+        this.review = new Review (reviewMessage);
     }
 
     public ReviewBuilder title(String title) {
