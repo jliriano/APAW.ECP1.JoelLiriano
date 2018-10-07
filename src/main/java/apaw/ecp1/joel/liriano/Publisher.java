@@ -2,6 +2,8 @@ package apaw.ecp1.joel.liriano;
 
 import apaw.ecp1.joel.liriano.utils.RandomId;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,11 +54,41 @@ public class Publisher {
         this.name = name;
     }
 
-    public void addGame(){
+    public void addGame(String gameName, String gameRating, LocalDateTime launchDate){
         if(games==null){
             games = new ArrayList<>();
         }
-        //Add game via Factory
+        Game game = new Game(gameName,this);
+        game.setGameRating(gameRating);
+        game.setLaunchDate(launchDate);
+        this.games.add(GameFactory.getFactory().addGame(game));
+    }
+
+    public void removeGame(String id) {
+        GameFactory.getFactory().removeGame(id);
+        games.remove(id);
+    }
+
+    public void modifyGameName(String id, String newName) {
+        Game modifyGame = getGameById(id);
+        modifyGame.setName(newName);
+        GameFactory.getFactory().modifyGame(modifyGame);
+    }
+
+    public void modifyGameRating(String id, String newRating) {
+        Game modifyGame = getGameById(id);
+        modifyGame.setGameRating(newRating);
+        GameFactory.getFactory().modifyGame(modifyGame);
+    }
+
+    public void modifyGameLaunchDate(String id, LocalDateTime newLaunchDate) {
+        Game modifyGame = getGameById(id);
+        modifyGame.setLaunchDate(newLaunchDate);
+        GameFactory.getFactory().modifyGame(modifyGame);
+    }
+
+    public Game getGameById(String id) {
+        return GameFactory.getFactory().getGame(id);
     }
 
     public void addReview(Review review){
