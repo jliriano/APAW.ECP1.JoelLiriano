@@ -2,7 +2,6 @@ package apaw.ecp1.joel.liriano;
 
 import apaw.ecp1.joel.liriano.utils.RandomId;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
