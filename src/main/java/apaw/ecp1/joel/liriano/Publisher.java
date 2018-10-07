@@ -10,7 +10,7 @@ public class Publisher {
     private String id;
     private String name;
     private String website;
-    private List<Game> games;
+    private List<String> games;
     private List<Review> reviews;
 
     public Publisher(String name){
@@ -30,7 +30,7 @@ public class Publisher {
         return website;
     }
 
-    public List<Game> getGames() {
+    public List<String> getGames() {
         return games;
     }
 
@@ -52,11 +52,11 @@ public class Publisher {
         this.name = name;
     }
 
-    public void addGame(Game game){
+    public void addGame(){
         if(games==null){
             games = new ArrayList<>();
         }
-        games.add(game);
+        //Add game via Factory
     }
 
     public void addReview(Review review){
