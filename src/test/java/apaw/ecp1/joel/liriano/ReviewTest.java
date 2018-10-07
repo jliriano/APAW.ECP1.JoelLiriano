@@ -29,4 +29,12 @@ public class ReviewTest {
         assertEquals("Newtitle",review.getTitle());
 
     }
+
+    @Test
+    void testEditReviewMessage() {
+        assertEquals("message",review.getReviewMessage());
+        review.setReviewMessage("updated message");
+        assertEquals("updated message",review.getReviewMessage());
+    }
+
 }
