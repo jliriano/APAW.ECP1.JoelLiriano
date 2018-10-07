@@ -28,7 +28,7 @@ public class GameFactory {
     }
 
     public void modifyGame(Game game) {
-        String ignored = addGame(game);
+        addGame(game);
     }
 
     public void removeGame(String id) {
