@@ -23,4 +23,8 @@ public class GameLeaf extends GameComponent {
     public void remove(GameComponent gameComponent) {
         //do nothing because it's a leaf
     }
+
+    public Game getGame() {
+        return this.game;
+    }
 }
