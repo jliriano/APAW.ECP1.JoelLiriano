@@ -1,4 +1,4 @@
-package apaw.ecp1.joel.liriano.Strategy;
+package apaw.ecp1.joel.liriano.strategy;
 
 public class Run implements Strategy {
     @Override
