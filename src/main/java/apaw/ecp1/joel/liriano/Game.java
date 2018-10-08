@@ -16,6 +16,7 @@ public class Game {
         this.id = RandomId.string();
         this.name = name;
         this.publisher = publisher;
+        GameObservable.getObservable().accept("New game added: "+this.name+" / Id: "+id);
     }
 
     public void setLaunchDate(LocalDateTime launchDate) {
