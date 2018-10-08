@@ -7,9 +7,14 @@ import java.util.function.Consumer;
 public class GameObservable {
 
     private List<Consumer<String>> consumers;
+    private static GameObservable observable = new GameObservable();
 
-    public GameObservable() {
+    private GameObservable() {
         this.consumers = new ArrayList<>();
+    }
+
+    public static GameObservable getObservable() {
+        return observable;
     }
 
     public Consumer<String> subscribe(Consumer<String> consumer) {

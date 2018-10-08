@@ -11,13 +11,12 @@ public class Game {
     private LocalDateTime launchDate;
     private Publisher publisher;
     private String gameRating;
-    private GameObservable observable = new GameObservable();
 
     public Game(String name, Publisher publisher){
         this.id = RandomId.string();
         this.name = name;
         this.publisher = publisher;
-        observable.accept("New game added: "+this.name+" / Id: "+id);
+        GameObservable.getObservable().accept("New game added: "+this.name+" / Id: "+id);
     }
 
     public void setLaunchDate(LocalDateTime launchDate) {
