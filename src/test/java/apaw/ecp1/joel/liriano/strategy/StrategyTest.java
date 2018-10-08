@@ -30,24 +30,24 @@ public class StrategyTest {
     void testRunStrategy() {
         context = new Context(dog);
         assertEquals("I'm running!",context.move());
-        LogManager.getLogger().debug("Context for Dog> move() -> "+context.move());
+        LogManager.getLogger().debug("Context for "+context.getAnimal().getName()+": move() -> "+context.move());
         context = new Context(cat);
         assertEquals("I'm running!",context.move());
-        LogManager.getLogger().debug("Context for Cat> move() -> "+context.move());
+        LogManager.getLogger().debug("Context for "+context.getAnimal().getName()+": move() -> "+context.move());
     }
 
     @Test
     void testFlyStrategy() {
         context = new Context(bird);
         assertEquals("I'm flying!",context.move());
-        LogManager.getLogger().debug("Context for Bird> move() -> "+context.move());
+        LogManager.getLogger().debug("Context for "+context.getAnimal().getName()+": move() -> "+context.move());
     }
 
     @Test
     void testSwimStrategy() {
         context = new Context(dolphin);
         assertEquals("I'm swimming!",context.move());
-        LogManager.getLogger().debug("Context for Dolphin> move() -> "+context.move());
+        LogManager.getLogger().debug("Context for "+context.getAnimal().getName()+": move() -> "+context.move());
     }
 
 }
